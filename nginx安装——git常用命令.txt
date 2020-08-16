@@ -37,6 +37,7 @@ ip_hash
 	
 git add 文件名
 git commit -m '备注'
+
 git log
 git log -5 --pretty=oneline
 git reset --hard HEAD^	//回退到上一个版本
