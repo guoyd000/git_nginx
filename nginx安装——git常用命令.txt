@@ -1,0 +1,52 @@
+在Linux下安装gcc，openssl,pcre,zlib;在安装nginx时需要安装这些环境
+yum install gcc openssl openssl-devel pcre pcre-devel zlib zlib-devel -y;
+
+yum install pcre pcre-devel -y;
+yum install zlib zlib-devel -y;
+
+rz //上传文件的命令
+tar -zxvf nginx-1.18.0.tar.gz	//解压文件
+
+./configure --prefix=/usr/local/nginx	//正式安装
+
+make
+make install
+
+在/usr/local/nginx这个路径下执行./nginx 
+./nginx -c /usr/local/nginx/cong/nginx.conf
+/usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf
+
+master进程读取配置文件，并维护worker进程，而worker进程侧对请求进行实际处理；
+
+关闭nginx
+	优雅关闭	kill -QUIT 主pid
+	快速关闭	kill -TERM 主pid
+
+重启
+	./nginx -s reload
+
+检查conf文件
+/usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf -t
+
+ip_hash 
+	也叫IP绑定，每个请求按访问ip的hash值分配，这样每个访问客户端会固定访问一个后端服务器，可以解决会话session丢失的问题；
+
+最少连接：
+	web请求会被转发到连接数最少的服务器上
+	
+	
+git add 文件名
+git commit -m '备注'
+git log
+git log -5 --pretty=oneline
+git reset --hard HEAD^	//回退到上一个版本
+git reset --hard HEAD^^	//回退两个版本
+git reset --hard HEAD~1	//回退一个版本
+git reset --hard 标识符 //回退到制定的版本
+
+
+
+
+
+
+
